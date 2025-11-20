@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NutritionForm, ScannerInstructions, ScannerLoadingCard } from '@/components/scanner';
+import ProTipCard from '@/components/scanner/ProTipCard';
 import { HealthAssessment, HealthAssessmentImage } from '@/components/health';
 import { NutritionData, AnalyzeFoodRequest, HealthPrediction } from '@shared/schema';
 import { createScanAuditLog } from '@/admin/lib/auditLog';
@@ -332,6 +333,8 @@ export default function Scanner() {
       </div>
 
       <ScannerInstructions />
+
+      <ProTipCard />
 
         {/* Hidden file input used for both camera capture on mobile and file picker on desktop */}
         <input
