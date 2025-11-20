@@ -20,7 +20,7 @@ export default function Navigation() {
           {navItems.map((item) => {
             const isActive = location === item.href;
             const Icon = item.icon;
-
+            
             return (
               <Link key={item.href} href={item.href}>
                 <Button
@@ -40,7 +40,7 @@ export default function Navigation() {
                     "text-xs font-medium transition-all duration-300",
                     isActive && "font-semibold"
                   )}>
-                    {item.label === 'Analyze ' ? 'Personalized Food Analyser' : item.label}
+                    {item.label}
                   </span>
                 </Button>
               </Link>
