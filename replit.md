@@ -50,8 +50,10 @@ HyperDiaSense is an AI-driven nutritional label analysis system designed specifi
 2. **Manual Entry**: Enter nutrition facts manually via form
 3. **Health Assessment**: AI evaluates if food is safe or risky based on user's health profile
 4. **User Profiles**: Store health conditions, medications, demographics
-5. **Scan History**: Track past nutrition analyses
-6. **Personalized Tips**: Get health recommendations based on profile
+5. **BMI Classification**: Calculate BMI with WHO or Asian standards (user-selectable)
+6. **Educational Tips**: "Did You Know" pro tips on nutrition labels
+7. **Scan History**: Track past nutrition analyses
+8. **Personalized Tips**: Get health recommendations based on profile
 
 ## Configuration
 
@@ -81,12 +83,37 @@ HyperDiaSense is an AI-driven nutritional label analysis system designed specifi
 - **Deployment**: Configured for Autoscale deployment
 
 ## Recent Changes (Nov 20, 2025)
+
+### Initial Setup
 - ✅ Imported from GitHub to Replit
 - ✅ Installed all dependencies (npm install)
 - ✅ Configured workflow for development server
 - ✅ Set up all required environment variables
 - ✅ Configured deployment settings (autoscale)
 - ✅ Verified app is running successfully
+
+### New Features
+- ✅ **BMI Classification System**: Added dual-standard BMI classification
+  - WHO standards: Underweight (<18.5), Normal (18.5-24.9), Overweight (25-29.9), Obese (≥30)
+  - Asian standards: Underweight (<17.5), Normal (17.5-22.99), Overweight (23-27.99), Obese (≥28)
+  - User-selectable preference in profile demographics section
+  - Implemented in `client/src/lib/bmiUtils.ts`
+  - UI components updated: `BMISection.tsx`, `DemographicSection.tsx`
+  - Schema updated with `bmiStandard` field in `shared/schema.ts`
+  
+- ✅ **Educational Pro Tips**: Added "Did You Know" card on Scanner page
+  - Displays nutrition label trivia (e.g., ingredient ordering by quantity)
+  - Component: `client/src/components/scanner/ProTipCard.tsx`
+  - Rotating tips for user education on food label reading
+
+### Bug Fixes
+- ✅ Fixed loading state bug in Scanner where early returns didn't reset loading flag
+- ✅ Fixed ProTipCard export in scanner component barrel module
+
+### Notes
+- Asian BMI thresholds use user-specified values from image (<17.5, 17.5-22.99, 23-27.99, ≥28)
+- WHO-endorsed Asian cutoffs differ slightly (<18.5, 18.5-22.9, 23-24.9, ≥25)
+- Consider medical accuracy review for production deployment
 
 ## Firebase Setup Notes
 The app uses Firebase for:
