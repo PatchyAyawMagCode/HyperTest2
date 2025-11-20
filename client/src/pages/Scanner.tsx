@@ -149,6 +149,7 @@ export default function Scanner() {
     if (!userProfile || !user) {
       console.warn("⚠️ No user profile found:", { user: !!user, profile: !!userProfile });
       setShowProfileModal(true);
+      setLoading(false);
       return;
     }
 
@@ -165,6 +166,7 @@ export default function Scanner() {
         variant: "destructive"
       });
       setOpen(true);
+      setLoading(false);
       return;
     }
 
