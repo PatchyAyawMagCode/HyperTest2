@@ -98,6 +98,7 @@ export const demographicsSchema = z.object({
   heightCm: z.number().min(50).max(250),
   weightKg: z.number().min(20).max(300),
   activityLevel: z.enum(["Sedentary", "Lightly Active", "Moderate", "Very Active"]),
+  bmiStandard: z.enum(["WHO", "Asian"]).optional().default("WHO"),
 });
 
 
