@@ -330,7 +330,7 @@ export default function Scanner() {
           Food Analysis
         </h1>
         <p className="text-muted-foreground">
-          Personalized Food Analyzer
+          Track your health journey with smart food analysis
         </p>
       </div>
 
