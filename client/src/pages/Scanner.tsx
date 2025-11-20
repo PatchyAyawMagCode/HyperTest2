@@ -327,7 +327,7 @@ export default function Scanner() {
 
       <div className="text-center space-y-2 p-6 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-lg border">
         <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" data-testid="text-profile-title">
-          Food Analysis
+          Personalized Food Analyser
         </h1>
         <p className="text-muted-foreground">
           Track your health journey with smart food analysis
